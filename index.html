@@ -1,120 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Money Calculate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        button: '#595AFF',
-                    },
-                    fontFamily:
-                    {
-                        primary: ['Montserrat'],
-                        secondary: ['Ubuntu']
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              button: "#595AFF",
+            },
+            fontFamily: {
+              primary: ["Montserrat"],
+              secondary: ["Ubuntu"],
+            },
+          },
+        },
+      };
     </script>
-    <style>
+    <style></style>
+  </head>
 
-    </style>
-</head>
-
-<body>
+  <body>
     <header>
-        <h1 class="text-cyan-400 font-secondary font-semibold md:text-5xl text-2xl text-center md:py-10 py-4">Money Master💰</h1>
+      <h1
+        class="text-cyan-400 font-secondary font-semibold md:text-5xl text-2xl text-center md:py-10 py-4"
+      >
+        Money Master💰
+      </h1>
     </header>
     <main>
-        <section class="lg:flex pb-5">
-            <div class=" image-div lg:w-[150%]">
-                <img src="./assets/images/sm.png" class="h-full lg:w-fit w-full" alt="" srcset="">
+      <section class="lg:flex pb-5">
+        <div class="image-div lg:w-[150%]">
+          <img
+            src="./assets/images/sm.png"
+            class="h-full lg:w-fit w-full"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="bg-white lg:w-full">
+          <div>
+            <h1
+              class="text-indigo-600 font-primary font-semibold text-2xl text-center py-3"
+            >
+              Income
+            </h1>
+            <div class="text-center">
+              <label
+                class="font-secondery font-semibold text-right label"
+                for="income"
+                >Income :
+              </label>
+              <input
+                id="income-field"
+                class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
+                type="text"
+                value="10000"
+              />
             </div>
-            <div class="bg-white lg:w-full">
-                <div>
-                    <h1 class="text-indigo-600 font-primary font-semibold text-2xl text-center py-3">Income</h1>
-                    <div class="text-center">
-                        <label class=" font-secondery font-semibold text-right label" for="income">Income : </label>
-                        <input id="income-field" class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
-                            type="text" value="10000">
-                    </div>
-                </div>
+          </div>
 
-                <div>
-                    <h1 class="text-red-400 font-primary font-semibold text-2xl text-center py-3">Expenses</h1>
-                    <div>
-                        <div class="text-center pb-3">
-                            <label class="font-secondery font-semibold text-right label" for="food">
-                                Food :
-                            </label>
-                            <input id="food-field" class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
-                                type="text" value="3000">
-                        </div>
-                        <div class="text-center pb-3">
-                            <label class="font-secondery font-semibold text-right label" for="rent">
-                                Rent :
-                            </label>
-                            <input id="rent-field" class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
-                                type="text" value="2000">
-                        </div>
-                        <div class="text-center pb-3">
-                            <label class="font-secondery font-semibold text-right label" for="cloths">
-                                Cloths :
-                            </label>
-                            <input id="cloths-field" class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
-                                type="text" value="500">
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button id="calculate-button" class="bg-button text-white py-3 px-14 mt-2 rounded"
-                            type="submit">Calculate</button>
-                    </div>
-                </div>
-
-                <div class="text-center md:text-2xl font-primary font-semibold m-6">
-                    <h1>Total Expense : <span id="expense" class="text-red-500 font-secondary">5500</span></h1>
-                    <h1>Balance : <span id="balance" class="text-blue-400 font-secondary">4500</span></h1>
-                    <p id="alert" class="alert text-[20px] font-normal">You got lone. you should save money</p>
-                </div>
-
-                <div class="flex justify-center items-center save">
-                    <div>
-                        <label for="save" class="font-secondery font-semibold text-right">save :</label>
-                        <input type="text" name="" id="save-field"
-                            class="h-10 text-1xl border-none text-center mx-3 outline-none w-24" value="20">
-                    </div>
-                    <span>%</span>
-                    <button id="save-button" type="submit"
-                        class="md:ml-3 bg-button text-white py-2 px-14 rounded">Save</button>
-                </div>
-                <p id="alert_1" class="alert font-normal text-center">Button Disabled</p>
-
-                <div class="text-center md:text-2xl font-primary font-semibold m-6">
-                    <h1>Saving Amount : <span id="save-amount" class="text-blue-600 font-secondary">2000</span></h1>
-                    <h1>Remaining Balance : <span id="remaining-balance" class="text-fuchsia-400 font-secondary">2500</span></h1>
-                </div>
+          <div>
+            <h1
+              class="text-red-400 font-primary font-semibold text-2xl text-center py-3"
+            >
+              Expenses
+            </h1>
+            <div>
+              <div class="text-center pb-3">
+                <label
+                  class="font-secondery font-semibold text-right label"
+                  for="food"
+                >
+                  Food :
+                </label>
+                <input
+                  id="food-field"
+                  class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
+                  type="text"
+                  value="3000"
+                />
+              </div>
+              <div class="text-center pb-3">
+                <label
+                  class="font-secondery font-semibold text-right label"
+                  for="rent"
+                >
+                  Rent :
+                </label>
+                <input
+                  id="rent-field"
+                  class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
+                  type="text"
+                  value="2000"
+                />
+              </div>
+              <div class="text-center pb-3">
+                <label
+                  class="font-secondery font-semibold text-right label"
+                  for="cloths"
+                >
+                  Cloths :
+                </label>
+                <input
+                  id="cloths-field"
+                  class="h-10 text-1xl border-none rounded pl-3 mx-3 outline-none"
+                  type="text"
+                  value="500"
+                />
+              </div>
             </div>
-        </section>
+            <div class="text-center">
+              <button
+                id="calculate-button"
+                class="bg-button text-white py-3 px-14 mt-2 rounded"
+                type="submit"
+              >
+                Calculate
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center md:text-2xl font-primary font-semibold m-6">
+            <h1>
+              Total Expense :
+              <span id="expense" class="text-red-500 font-secondary">5500</span>
+            </h1>
+            <h1>
+              Balance :
+              <span id="balance" class="text-blue-400 font-secondary"
+                >4500</span
+              >
+            </h1>
+            <p id="alert" class="alert text-[20px] font-normal">
+              You got lone. you should save money
+            </p>
+          </div>
+
+          <div class="flex justify-center items-center save">
+            <div>
+              <label for="save" class="font-secondery font-semibold text-right"
+                >save :</label
+              >
+              <input
+                type="text"
+                name=""
+                id="save-field"
+                class="h-10 text-1xl border-none text-center mx-3 outline-none w-24"
+                value="20"
+              />
+            </div>
+            <span>%</span>
+            <button
+              id="save-button"
+              type="submit"
+              class="md:ml-3 bg-button text-white py-2 px-14 rounded"
+            >
+              Save
+            </button>
+          </div>
+          <p id="alert_1" class="alert font-normal text-center">
+            Button Disabled
+          </p>
+
+          <div class="text-center md:text-2xl font-primary font-semibold m-6">
+            <h1>
+              Saving Amount :
+              <span id="save-amount" class="text-blue-600 font-secondary"
+                >2000</span
+              >
+            </h1>
+            <h1>
+              Remaining Balance :
+              <span
+                id="remaining-balance"
+                class="text-fuchsia-400 font-secondary"
+                >2500</span
+              >
+            </h1>
+          </div>
+        </div>
+      </section>
     </main>
-
-
 
     <script src="./assets/js/utils.js"></script>
     <script src="./assets/js/function.js"></script>
     <script src="./assets/js/main.js"></script>
-</body>
-
+  </body>
 </html>

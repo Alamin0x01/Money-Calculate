@@ -1,32 +1,32 @@
 .label {
-    width: 20%;
-    display: inline-block;
+  width: 20%;
+  display: inline-block;
 }
 
 input {
-    background-color: #DCDCDC;
+  background-color: #dcdcdc;
 }
 
 .alert {
-    color: red;
-    display: none;
+  color: red;
+  display: none;
 }
 
 section {
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
-    .save {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-    }
+  .save {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
 
-    .label {
-        width: 21%;
-    }
+  .label {
+    width: 21%;
+  }
 }
